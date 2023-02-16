@@ -1,0 +1,42 @@
+{
+   "navigation-mobile": [
+      {
+         "label": "Home",
+         "href": "/"
+      },
+      {
+         "label": "Portifólio",
+         "href": "/portifolio"
+      },
+      {
+         "label": "Sobre nós",
+         "href": "/sobre-nos"
+      },
+      {
+         "label": "Entre em contato",
+         "href": "/contato"
+      }
+   ],
+   "navigation": {
+      "left": [
+         {
+            "label": "Home",
+            "href": "/"
+         },
+         {
+            "label": "Portifólio",
+            "href": "/portifolio"
+         }
+      ],
+      "right": [
+         {
+            "label": "Sobre nós",
+            "href": "/sobre-nos"
+         },
+         {
+            "label": "Entre em contato",
+            "href": "/contato"
+         }
+      ]
+   }
+}
