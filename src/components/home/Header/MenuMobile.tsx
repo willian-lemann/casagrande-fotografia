@@ -39,7 +39,7 @@ export function MenuMobile() {
         )}
       >
         <ul className="w-full h-full p-8 md:hidden">
-          {data["navigation-mobile"].map((navigationItem) => (
+          {data.navigation.map((navigationItem) => (
             <li className="p-4 text-2xl mb-4 last:mb-0 hover:bg-zinc-700 active:bg-zinc-900 rounded-md transition-colors duration-300">
               <Link key={navigationItem.label} href={navigationItem.href}>
                 {navigationItem.label}

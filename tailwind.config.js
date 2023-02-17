@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        nunito: ["Nunito", "sans-serif"],
+      },
+
       animation: {
         fadeIn: "fadeIn 0.3s ease",
         fadeOut: "fadeOut 0.3s ease",

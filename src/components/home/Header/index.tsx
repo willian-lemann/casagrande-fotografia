@@ -7,31 +7,21 @@ import { NavigationItem } from "./NavigationItem";
 
 export function Header() {
   return (
-    <header className="px-8 w-full h-[300px] md:h-[150px] md:flex md:items-center md:justify-center md:absolute z-20 md:bg-white/40  md:overflow-clip">
-      <nav className="hidden text-white md:block">
-        <ul className="flex items-center gap-4">
-          {data.navigation.left.map((item) => (
-            <NavigationItem
-              key={item.label}
-              href={item.href}
-              label={item.label}
-            />
-          ))}
-        </ul>
-      </nav>
+    <header className="px-8 w-full h-[300px] md:h-[140px] md:flex md:items-center md:justify-between md:bg-zinc-900/20 md:absolute z-20">
+      <section className="h-full">
+        <div className="w-full h-full md:w-[300px] md:h-full relative">
+          <Image
+            src="/images/logo-horizontal.png"
+            fill
+            alt="logo casagrande fotografia"
+            className="object-contain w-full h-full"
+          />
+        </div>
+      </section>
 
-      <div className="w-full h-full md:w-[400px] md:h-full relative">
-        <Image
-          src="/images/logo-horizontal-dark.png"
-          fill
-          alt="logo casagrande fotografia"
-          className="object-contain w-full h-full"
-        />
-      </div>
-
-      <nav className="hidden text-white md:block">
+      <nav className="hidden text-white md:block md:mr-20">
         <ul className="flex items-center gap-4">
-          {data.navigation.right.map((item) => (
+          {data.navigation.map((item) => (
             <NavigationItem
               key={item.label}
               href={item.href}
