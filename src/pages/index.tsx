@@ -1,15 +1,31 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Image from "next/image";
-import { Header } from "../components/home/Header";
+import { Header, Navigation } from "../components/home/Header";
+import { apolloClient } from "../config/apollo";
+import { GET_HOME } from "../lib/graphql/queries/home";
 
-const Home: NextPage = () => {
+export type PageContent = {
+  home: {
+    websiteTitle: string;
+    headerNavigation: Navigation[];
+    logo: {
+      url: string;
+    };
+    backgroundImage: {
+      url: string;
+    };
+  };
+};
+
+const Home: NextPage<PageContent> = ({ home }) => {
+  console.log(home);
   return (
     <div className="relative h-screen w-screen">
-      <Header />
+      <Header logo={home.logo.url} navigation={home.headerNavigation} />
 
       <div className="relative w-full h-1/2 md:h-full md:absolute">
         <Image
-          src="/images/bruna-e-sostenes.jpg"
+          src={home.backgroundImage.url}
           alt="foto bruna e sostenes"
           fill
           className="object-cover -z-10"
@@ -31,3 +47,26 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await apolloClient.query<PageContent>({
+    query: GET_HOME,
+  });
+
+  console.log(data);
+
+  if (!data) {
+    return {
+      props: {
+        initialApolloState: apolloClient.cache.extract(),
+      },
+    };
+  }
+
+  return {
+    props: {
+      home: data.home,
+      initialApolloState: apolloClient.cache.extract(),
+    },
+  };
+};
