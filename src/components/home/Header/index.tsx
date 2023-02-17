@@ -14,7 +14,14 @@ export function Header() {
             src="/images/logo-horizontal.png"
             fill
             alt="logo casagrande fotografia"
-            className="object-contain w-full h-full"
+            className="hidden md:block object-contain w-full h-full"
+          />
+
+          <Image
+            src="/images/logo-horizontal-dark.png"
+            fill
+            alt="logo casagrande fotografia"
+            className="md:hidden object-contain w-full h-full"
           />
         </div>
       </section>
