@@ -44,19 +44,54 @@ export default async function SobreNos() {
           <strong className="text-center">{data.about.photosHeader}</strong>
         </article>
 
-        <ul className="mt-10 w-full">
+        <ul className="mt-10 w-full md:grid md:grid-cols-3 md:gap-8">
           {data.about.photos.map((photo) => (
-            <li
-              key={photo.url}
-              className="relative w-full h-[440px] mb-4 last:mb-0 rounded-md"
-            >
-              <Image
-                fill
-                src={photo.url}
-                alt="imagem do victor"
-                className="object-cover rounded-md"
-              />
-            </li>
+            <>
+              <li
+                key={photo.url}
+                className="relative w-full h-[440px] md:h-[700px] mb-4 md:mb-0 last:mb-0 rounded-md"
+              >
+                <Image
+                  fill
+                  src={photo.url}
+                  alt="imagem do victor"
+                  className="object-cover rounded-md"
+                />
+              </li>
+              <li
+                key={photo.url}
+                className="relative w-full h-[440px] md:h-[700px] mb-4 md:mb-0 last:mb-0 rounded-md"
+              >
+                <Image
+                  fill
+                  src={photo.url}
+                  alt="imagem do victor"
+                  className="object-cover rounded-md"
+                />
+              </li>
+              <li
+                key={photo.url}
+                className="relative w-full h-[440px] md:h-[700px] mb-4 md:mb-0 last:mb-0 rounded-md"
+              >
+                <Image
+                  fill
+                  src={photo.url}
+                  alt="imagem do victor"
+                  className="object-cover rounded-md"
+                />
+              </li>
+              <li
+                key={photo.url}
+                className="relative w-full h-[440px] md:h-[700px] mb-4 md:mb-0 last:mb-0 rounded-md"
+              >
+                <Image
+                  fill
+                  src={photo.url}
+                  alt="imagem do victor"
+                  className="object-cover rounded-md"
+                />
+              </li>
+            </>
           ))}
         </ul>
       </div>
