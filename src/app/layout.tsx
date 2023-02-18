@@ -13,11 +13,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { data } = await apolloClient.query<PageContent>({ query: GET_HOME });
+  const response = await apolloClient.query<PageContent>({ query: GET_HOME });
+
+  const data = response?.data;
 
   const activeLogo = data.home.header.logos.find((logo) => logo.isActive);
 
-  console.log(data.home.header)
+  console.log(data.home.header);
   return (
     <html lang="pt-BR" className={inter.className}>
       <head />
