@@ -32,9 +32,10 @@ export default async function SobreNos() {
               {data.about.subheader}
             </strong>
 
-            <p className="text-zinc-500 px-4 mt-2 md:mt-10 text-start">
-              {data.about.briefDescription}.
-            </p>
+            <p
+              className="text-zinc-500 px-4 mt-2 md:mt-10 text-start"
+              dangerouslySetInnerHTML={{ __html: data.about.briefDescription }}
+            />
           </div>
         </section>
       </header>

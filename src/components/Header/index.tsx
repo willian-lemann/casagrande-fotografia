@@ -44,14 +44,14 @@ export function Header({ navigation, logo }: HeaderProps) {
           </button>
         </div>
 
+
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => {
-            console.log(item);
             return (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="text-base font-normal leading-6 text-gray-900"
               >
                 {item.label}
               </Link>
