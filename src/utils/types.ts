@@ -32,6 +32,8 @@ export type AboutContent = {
     subheader: string;
     profileAvatar: { url: string };
     briefDescription: string;
+    photosHeader: string;
+    photos: Array<{ url: string }>;
   };
 };
 

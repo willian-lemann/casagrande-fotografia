@@ -7,6 +7,10 @@ export const GET_ABOUT = gql`
       header
       subheader
       briefDescription
+      photosHeader
+      photos {
+        url(transformation: { image: { resize: { width: 1920, height: 1080 } } })
+      }
       profileAvatar {
         url(transformation: { image: { resize: { width: 1280, height: 720 } } })
       }

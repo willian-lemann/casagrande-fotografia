@@ -11,7 +11,7 @@ export default async function SobreNos() {
       <header className="flex flex-col items-center h-full md:h-[calc(100vh-100px)] md:flex-row relative">
         <section className="bg-green-50 h-full w-full flex justify-center md:flex-1 md:items-center">
           <div className="mt-[6rem] md:mr-[8rem]">
-            <strong className="inline-block text-center text-zinc-700 text-2xl md:text-4xl md:max-w-md md:text-start">
+            <strong className="inline-block text-center px-8 md:px-0 text-zinc-700 text-2xl md:text-4xl md:max-w-md md:text-start">
               {data.about.header}
             </strong>
           </div>
@@ -26,7 +26,7 @@ export default async function SobreNos() {
           />
         </div>
 
-        <section className="h-full bg-green-100 flex items-center flex-col justify-end md:flex-1 md:justify-center">
+        <section className="h-full w-full flex items-center flex-col justify-end md:flex-1 md:justify-center">
           <div className="mb-4 max-w-sm text-center md:ml-[8rem]">
             <strong className="text-zinc-700 text-lg pt-20">
               {data.about.subheader}
@@ -38,6 +38,28 @@ export default async function SobreNos() {
           </div>
         </section>
       </header>
+
+      <div className="w-full px-8">
+        <article className="pt-20">
+          <strong className="text-center">{data.about.photosHeader}</strong>
+        </article>
+
+        <ul className="mt-10 w-full">
+          {data.about.photos.map((photo) => (
+            <li
+              key={photo.url}
+              className="relative w-full h-[440px] mb-4 last:mb-0 rounded-md"
+            >
+              <Image
+                fill
+                src={photo.url}
+                alt="imagem do victor"
+                className="object-cover rounded-md"
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

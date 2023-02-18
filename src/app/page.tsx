@@ -27,7 +27,8 @@ export default function Example() {
                 Conte sua história em cada Fotografia.
               </h1>
               <p className="mt-6 text-lg leading-8 text-white">
-                Uma foto vale mais que mil palavras nao é mesmo?
+                Capturando momentos inesquecíveis de amor, para que possam ser
+                revividos para sempre.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
