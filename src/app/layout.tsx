@@ -24,7 +24,7 @@ export default async function RootLayout({
     <html lang="pt-BR" className={inter.className}>
       <head />
       <body>
-        <div className="container w-screen h-screen">
+        <div className="">
           <Header
             logo={activeLogo?.image.url as string}
             navigation={data.home.header.navigation}

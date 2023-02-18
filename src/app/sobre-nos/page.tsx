@@ -7,7 +7,7 @@ export default async function SobreNos() {
   const { data } = await apolloClient.query<AboutContent>({ query: GET_ABOUT });
 
   return (
-    <div>
+    <>
       <header className="flex flex-col items-center h-[calc(100vh-65px)] md:h-[calc(100vh-128px)] md:flex-row relative">
         <section className="bg-green-50 h-full w-full flex justify-center md:flex-1 md:items-center">
           <div className="mt-[6rem] md:mr-[8rem]">
@@ -95,6 +95,6 @@ export default async function SobreNos() {
           ))}
         </ul>
       </div>
-    </div>
+    </>
   );
 }
