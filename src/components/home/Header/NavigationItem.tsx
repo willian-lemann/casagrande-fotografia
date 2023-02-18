@@ -6,8 +6,8 @@ type NavigationItemProps = {
 };
 export function NavigationItem({ href, label }: NavigationItemProps) {
   return (
-    <li key={label} className="text-white text-lg font-nunito">
-      <Link href={href}>{label}</Link>
+    <li key={label} className="text-lg font-nunito">
+      <Link href={`/${href}`}>{label}</Link>
     </li>
   );
 }

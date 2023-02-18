@@ -26,4 +26,13 @@ export type PageContent = {
   };
 };
 
+export type AboutContent = {
+  about: {
+    header: string;
+    subheader: string;
+    profileAvatar: { url: string };
+    briefDescription: string;
+  };
+};
+
 export type HeaderContent = {};

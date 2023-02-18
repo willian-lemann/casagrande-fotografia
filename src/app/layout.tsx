@@ -17,6 +17,7 @@ export default async function RootLayout({
 
   const activeLogo = data.home.header.logos.find((logo) => logo.isActive);
 
+  console.log(data.home.header)
   return (
     <html lang="pt-BR" className={inter.className}>
       <head />

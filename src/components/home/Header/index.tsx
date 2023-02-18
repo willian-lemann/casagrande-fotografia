@@ -1,9 +1,14 @@
-import Image from "next/image";
-import { useHeader } from "../../../lib/graphql/queries/home";
-import { Navigation } from "../../../utils/types";
-import { MenuMobile } from "./MenuMobile";
+"use client";
 
-import { NavigationItem } from "./NavigationItem";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+
+import Link from "next/link";
+import { useState } from "react";
+
+import { Navigation } from "../../../utils/types";
+
+import { Dialog } from "@headlessui/react";
+import Image from "next/image";
 
 type HeaderProps = {
   navigation: Navigation[];
@@ -11,39 +16,84 @@ type HeaderProps = {
 };
 
 export function Header({ navigation, logo }: HeaderProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <header className="px-8 w-full h-[300px] md:h-[140px] md:flex md:items-center md:justify-between md:bg-zinc-900/20 md:absolute z-20">
-      <section className="h-full">
-        <div className="w-full h-full md:w-[300px] md:h-full relative">
-          <Image
-            src={logo}
-            fill
-            alt="logo casagrande fotografia"
-            className="hidden md:block object-contain w-full h-full"
-          />
-
-          <Image
-            src={logo}
-            fill
-            alt="logo casagrande fotografia"
-            className="md:hidden object-contain w-full h-full"
-          />
+    <div className="px-6 py-6 lg:px-8">
+      <nav className="flex items-center justify-between" aria-label="Global">
+        <div className="flex lg:flex-1">
+          <div className="relative w-52 h-20">
+            <Image src={logo} alt="logo casagrande fotografia" fill  className="object-cover"/>
+          </div>
         </div>
-      </section>
 
-      <nav className="hidden text-white md:block md:mr-20">
-        <ul className="flex items-center gap-4">
-          {navigation.map((item) => (
-            <NavigationItem
-              key={item.label}
-              href={item.href}
-              label={item.label}
-            />
-          ))}
-        </ul>
+        {/* Mobile  */}
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+
+        <div className="hidden lg:flex lg:gap-x-12">
+          {navigation.map((item) => {
+            console.log(item);
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-gray-900"
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end" />
       </nav>
 
-      <MenuMobile navigation={navigation} />
-    </header>
+      <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <Dialog.Panel className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden">
+          <div className="flex items-center justify-between">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                className="h-8"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-400/10"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+    </div>
   );
 }

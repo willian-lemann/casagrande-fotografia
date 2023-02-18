@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: "",
+      },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
         nunito: ["Nunito", "sans-serif"],
