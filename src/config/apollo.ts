@@ -1,4 +1,12 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  DocumentNode,
+  InMemoryCache,
+  OperationVariables,
+  QueryHookOptions,
+  TypedDocumentNode,
+  useQuery as apolloUseQuery,
+} from "@apollo/client";
 
 const uri =
   typeof window === "undefined"
@@ -10,3 +18,13 @@ export const apolloClient = new ApolloClient({
   uri,
   cache: new InMemoryCache(),
 });
+
+export function useQuery(
+  query: DocumentNode | TypedDocumentNode<any, OperationVariables>,
+  options?: QueryHookOptions<any, OperationVariables> | undefined
+) {
+  return apolloUseQuery(query, {
+    ...options,
+    ssr: typeof window === "undefined",
+  });
+}

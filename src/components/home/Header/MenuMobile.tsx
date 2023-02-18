@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 import Link from "next/link";
@@ -7,10 +9,13 @@ import {
 } from "@heroicons/react/24/solid";
 
 import { classNames } from "../../../utils/classNames";
+import { Navigation } from "../../../utils/types";
 
-import data from "../../home/data.json";
+type MenuMobileProps = {
+  navigation: Navigation[];
+};
 
-export function MenuMobile() {
+export function MenuMobile({ navigation }: MenuMobileProps) {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   return (
@@ -23,6 +28,14 @@ export function MenuMobile() {
           )}
           onClick={() => setIsMenuVisible(true)}
         />
+      </div>
+
+      <nav
+        className={classNames(
+          isMenuVisible ? "w-full" : "-translate-x-full",
+          "transition-all duration-300 text-zinc-800 bg-green-50 absolute h-full left-0 z-50 shadow-lg top-0"
+        )}
+      >
         <XIcon
           className={classNames(
             isMenuVisible ? "block" : "hidden animate-fadeOut",
@@ -30,16 +43,8 @@ export function MenuMobile() {
           )}
           onClick={() => setIsMenuVisible(false)}
         />
-      </div>
-
-      <nav
-        className={classNames(
-          isMenuVisible ? "" : "-translate-x-full",
-          "transition-all duration-300 text-white bg-zinc-800 absolute h-full left-0 z-50 shadow-lg top-0"
-        )}
-      >
         <ul className="w-full h-full p-8 md:hidden">
-          {data.navigation.map((navigationItem) => (
+          {navigation.map((navigationItem) => (
             <li
               key={navigationItem.label}
               className="p-4 text-2xl mb-4 last:mb-0 hover:bg-zinc-700 active:bg-zinc-900 rounded-md transition-colors duration-300"

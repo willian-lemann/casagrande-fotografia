@@ -1,12 +1,9 @@
 import Image from "next/image";
+import { useHeader } from "../../../lib/graphql/queries/home";
+import { Navigation } from "../../../utils/types";
 import { MenuMobile } from "./MenuMobile";
 
 import { NavigationItem } from "./NavigationItem";
-
-export type Navigation = {
-  href: string;
-  label: string;
-};
 
 type HeaderProps = {
   navigation: Navigation[];
@@ -46,7 +43,7 @@ export function Header({ navigation, logo }: HeaderProps) {
         </ul>
       </nav>
 
-      <MenuMobile />
+      <MenuMobile navigation={navigation} />
     </header>
   );
 }
