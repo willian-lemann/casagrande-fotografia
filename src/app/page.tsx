@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Example() {
+export default function Home() {
   return (
     <div className="isolate bg-white">
       <main className="relative md:bg-black/20 w-full h-[calc(100vh-128px)] md:h-full">

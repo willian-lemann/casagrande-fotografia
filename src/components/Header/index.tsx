@@ -5,7 +5,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { Fragment, useState } from "react";
 
-import { Navigation } from "../../../utils/types";
+import { Navigation } from "../../utils/types";
 
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -40,7 +40,7 @@ export function Header({ navigation, logo }: HeaderProps) {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-8 w-8" aria-hidden="true" />
           </button>
         </div>
 

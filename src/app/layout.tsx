@@ -1,10 +1,11 @@
 import "../styles/globals.css";
 
 import { Inter } from "@next/font/google";
-import { Header } from "../components/home/Header";
+import { Header } from "../components/Header";
 import { apolloClient } from "..//config/apollo";
 import { GET_HOME } from "../lib/graphql/queries/home";
 import { PageContent } from "../utils/types";
+import { Footer } from "../components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,12 +24,16 @@ export default async function RootLayout({
     <html lang="pt-BR" className={inter.className}>
       <head />
       <body>
-        <Header
-          logo={activeLogo?.image.url as string}
-          navigation={data.home.header.navigation}
-        />
+        <div className="container w-screen h-screen">
+          <Header
+            logo={activeLogo?.image.url as string}
+            navigation={data.home.header.navigation}
+          />
 
-        {children}
+          {children}
+
+          <Footer />
+        </div>
       </body>
     </html>
   );
