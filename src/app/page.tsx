@@ -3,15 +3,15 @@ import Image from "next/image";
 export default function Example() {
   return (
     <div className="isolate bg-white">
-      <main className="relative bg-black/20">
+      <main className="relative md:bg-black/20 w-full h-[calc(100vh-128px)] md:h-full">
         <Image
           src="/images/bruna-e-sostenes.jpg"
           alt="foto bruna e sostenes"
           fill
-          className="object-cover -z-10 "
+          className="object-cover -z-10"
         />
 
-        <div className="relative px-6 lg:px-8">
+        <div className="relative px-6 lg:px-8 container">
           <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-white hover:brightness-90 transition-colors duration-300">
@@ -22,7 +22,7 @@ export default function Example() {
                 </a>
               </div>
             </div>
-            <div className="text-center">
+            <div className="text-center hidden md:inline-block">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Conte sua história em cada Fotografia.
               </h1>
