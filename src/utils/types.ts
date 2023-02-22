@@ -38,3 +38,22 @@ export type AboutContent = {
 };
 
 export type HeaderContent = {};
+
+type Portifolio = {
+  id: string;
+  thumbnail: {
+    url: string;
+  };
+  title: string;
+  date: Date;
+  type: string;
+};
+
+export type PortifolioContent = {
+  portifolio: {
+    backgroundImage: { url: string };
+    title: string;
+    subtitle: string;
+    portifolio: Portifolio[];
+  };
+};
