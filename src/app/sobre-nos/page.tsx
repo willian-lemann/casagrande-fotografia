@@ -17,7 +17,7 @@ export default async function SobreNos() {
           </div>
         </section>
 
-        <div className="h-[200px] w-[200px] md:w-[300px] md:h-[400px] absolute top-1/2 -translate-y-1/2 md:-translate-x-1/2 md:left-1/2">
+        <div className="h-[200px] w-[200px] md:w-[300px] md:h-[300px] absolute top-1/2 -translate-y-1/2 md:-translate-x-1/2 md:left-1/2">
           <Image
             src={data.about.profileAvatar.url}
             alt="profile avatar image"
