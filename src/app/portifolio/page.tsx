@@ -26,35 +26,103 @@ export default async function Portifolio() {
         </div>
       </section>
 
-      <section className="px-8 mt-10">
-        <h1 className="text-center text-xl text-zinc-700">
+      <section className="px-8 md:px-0">
+        <h1 className="text-center text-xl text-zinc-700 my-10">
           Casamentos e Pré Weddings
         </h1>
 
-        <ul className="mt-20">
+        <ul className="md:grid md:grid-cols-3 md:gap-10">
           {data.portifolio.portifolio.map((portifolioItem) => (
-            <li
-              key={portifolioItem.id}
-              className="group cursor-pointer mb-8 last:mb-0"
-            >
-              <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent transition-colors duration-300">
-                <Image
-                  src={portifolioItem.thumbnail.url}
-                  fill
-                  alt="thumbnail portifolio"
-                  className="object-cover rounded-md -z-10"
-                />
-              </div>
-
-              <div className="mt-4">
-                <h3 className="">{portifolioItem.title}</h3>
-
-                <div className="pt-4 text-zinc-500">
-                  <p>{getPortifolioType(portifolioItem.type as Type)}</p>
-                  <p>{getPortifolioDate(portifolioItem.date)}</p>
+            <>
+              <li
+                key={portifolioItem.id}
+                className="group cursor-pointer mb-8 last:mb-0"
+              >
+                <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent overflow-hidden transition-colors duration-300">
+                  <Image
+                    src={portifolioItem.thumbnail.url}
+                    fill
+                    alt="thumbnail portifolio"
+                    className="object-cover rounded-md -z-10 group-hover:scale-105  transition-all duration-300"
+                  />
                 </div>
-              </div>
-            </li>
+
+                <div className="mt-4">
+                  <h3 className="">{portifolioItem.title}</h3>
+
+                  <div className="pt-4 text-zinc-500">
+                    <p>{getPortifolioType(portifolioItem.type as Type)}</p>
+                    <p>{getPortifolioDate(portifolioItem.date)}</p>
+                  </div>
+                </div>
+              </li>
+              <li
+                key={portifolioItem.id}
+                className="group cursor-pointer mb-8 last:mb-0"
+              >
+                <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent overflow-hidden transition-colors duration-300">
+                  <Image
+                    src={portifolioItem.thumbnail.url}
+                    fill
+                    alt="thumbnail portifolio"
+                    className="object-cover rounded-md -z-10 group-hover:scale-105  transition-all duration-300"
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <h3 className="">{portifolioItem.title}</h3>
+
+                  <div className="pt-4 text-zinc-500">
+                    <p>{getPortifolioType(portifolioItem.type as Type)}</p>
+                    <p>{getPortifolioDate(portifolioItem.date)}</p>
+                  </div>
+                </div>
+              </li>
+              <li
+                key={portifolioItem.id}
+                className="group cursor-pointer mb-8 last:mb-0"
+              >
+                <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent overflow-hidden transition-colors duration-300">
+                  <Image
+                    src={portifolioItem.thumbnail.url}
+                    fill
+                    alt="thumbnail portifolio"
+                    className="object-cover rounded-md -z-10 group-hover:scale-105  transition-all duration-300"
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <h3 className="">{portifolioItem.title}</h3>
+
+                  <div className="pt-4 text-zinc-500">
+                    <p>{getPortifolioType(portifolioItem.type as Type)}</p>
+                    <p>{getPortifolioDate(portifolioItem.date)}</p>
+                  </div>
+                </div>
+              </li>
+              <li
+                key={portifolioItem.id}
+                className="group cursor-pointer mb-8 last:mb-0"
+              >
+                <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent overflow-hidden transition-colors duration-300">
+                  <Image
+                    src={portifolioItem.thumbnail.url}
+                    fill
+                    alt="thumbnail portifolio"
+                    className="object-cover rounded-md -z-10 group-hover:scale-105  transition-all duration-300"
+                  />
+                </div>
+
+                <div className="mt-4">
+                  <h3 className="">{portifolioItem.title}</h3>
+
+                  <div className="pt-4 text-zinc-500">
+                    <p>{getPortifolioType(portifolioItem.type as Type)}</p>
+                    <p>{getPortifolioDate(portifolioItem.date)}</p>
+                  </div>
+                </div>
+              </li>
+            </>
           ))}
         </ul>
       </section>
