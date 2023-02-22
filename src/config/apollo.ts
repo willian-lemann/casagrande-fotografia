@@ -19,8 +19,8 @@ export const apolloClient = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export function useQuery(
-  query: DocumentNode | TypedDocumentNode<any, OperationVariables>,
+export function useQuery<T = any>(
+  query: DocumentNode | TypedDocumentNode<T, OperationVariables>,
   options?: QueryHookOptions<any, OperationVariables> | undefined
 ) {
   return apolloUseQuery(query, {

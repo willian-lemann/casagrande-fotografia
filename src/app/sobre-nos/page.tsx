@@ -9,7 +9,7 @@ export default async function SobreNos() {
   return (
     <>
       <header className="flex flex-col items-center h-[calc(100vh-65px)] md:h-[calc(100vh-128px)] md:flex-row relative">
-        <section className="bg-green-50 h-full w-full flex justify-center md:flex-1 md:items-center">
+        <section className="bg-primary h-full w-full flex justify-center md:flex-1 md:items-center">
           <div className="mt-[6rem] md:mr-[8rem]">
             <strong className="inline-block text-center px-8 md:px-0 text-zinc-700 text-2xl md:text-4xl md:max-w-md md:text-start">
               {data.about.header}
@@ -26,14 +26,14 @@ export default async function SobreNos() {
           />
         </div>
 
-        <section className="h-full w-full flex items-center flex-col justify-end md:justify-center md:flex-1">
+        <section className="px-8 h-full w-full flex items-center flex-col justify-end md:justify-center md:flex-1">
           <div className="max-w-sm text-center md:ml-[8rem]">
             <strong className="text-zinc-700 text-lg mt-20">
               {data.about.subheader}
             </strong>
 
             <p
-              className="text-zinc-500 px-4 mt-2 md:mt-10 text-start"
+              className="text-zinc-500 mt-2 md:mt-10 text-start"
               dangerouslySetInnerHTML={{ __html: data.about.briefDescription }}
             />
           </div>

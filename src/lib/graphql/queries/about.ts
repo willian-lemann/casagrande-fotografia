@@ -9,7 +9,9 @@ export const GET_ABOUT = gql`
       briefDescription
       photosHeader
       photos {
-        url(transformation: { image: { resize: { width: 1920, height: 1080 } } })
+        url(
+          transformation: { image: { resize: { width: 1920, height: 1080 } } }
+        )
       }
       profileAvatar {
         url(transformation: { image: { resize: { width: 1280, height: 720 } } })
@@ -18,6 +20,6 @@ export const GET_ABOUT = gql`
   }
 `;
 
-export function useAbout() {
-  return useQuery(GET_ABOUT);
+export function useAbout<T>() {
+  return useQuery<T>(GET_ABOUT);
 }
