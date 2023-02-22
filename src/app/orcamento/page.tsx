@@ -10,7 +10,7 @@ export default async function Orcamento() {
   return (
     <div className="container h-screen flex justify-center">
       <iframe
-        className="scale-100 h-full w-[800px]"
+        className="scale-100 h-full w-[300px] md:w-[800px]"
         src={`${data.orcamento.file.url}#toolbar=0`}
       />
     </div>
