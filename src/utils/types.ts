@@ -57,3 +57,11 @@ export type PortifolioContent = {
     portifolio: Portifolio[];
   };
 };
+
+export type OrcamentoContent = {
+  orcamento: {
+    file: {
+      url: string;
+    };
+  };
+};

@@ -41,7 +41,7 @@ export default async function SobreNos() {
         </section>
       </header>
 
-      <div className="w-full px-8">
+      <div className="w-full px-8 md:px-0">
         <ul className="mt-10 w-full md:grid md:grid-cols-3 md:gap-8">
           {data.about.photos.map((photo) => (
             <>
