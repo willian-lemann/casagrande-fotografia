@@ -8,8 +8,6 @@ import { PageContent } from "../utils/types";
 import { Footer } from "../components/Footer";
 import { FloatingButton } from "../components/FloatingButton";
 
-import { ApolloProvider } from "@apollo/client";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export default async function RootLayout({

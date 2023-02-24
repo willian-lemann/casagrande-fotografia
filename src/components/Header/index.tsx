@@ -58,7 +58,11 @@ export function Header({ navigation, logo }: HeaderProps) {
           })}
         </div>
 
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end" />
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <button className="bg-primary rounded-full px-4 py-2 text-white text-base transition-all duration-300 hover:brightness-95">
+            Conhecer mais
+          </button>
+        </div>
       </nav>
 
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

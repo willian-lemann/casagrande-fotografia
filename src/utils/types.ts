@@ -1,3 +1,5 @@
+import { Type } from "../functions/get-portifolio-type";
+
 type Logo = {
   isActive: boolean;
   image: {
@@ -39,14 +41,14 @@ export type AboutContent = {
 
 export type HeaderContent = {};
 
-type Portifolio = {
+export type Portifolio = {
   id: string;
   thumbnail: {
     url: string;
   };
   title: string;
   date: Date;
-  type: string;
+  type: Type;
 };
 
 export type PortifolioContent = {

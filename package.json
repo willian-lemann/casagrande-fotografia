@@ -12,6 +12,7 @@
     "@next/font": "^13.1.6",
     "date-fns": "^2.29.3",
     "graphql": "^16.6.0",
+    "instagram-web-api": "^2.2.2",
     "lucide-react": "^0.115.0",
     "next": "latest",
     "react": "18.2.0",

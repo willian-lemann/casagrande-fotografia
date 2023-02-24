@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 import { useQuery } from "../../../config/apollo";
 
 export const GET_PORTIFOLIO = gql`
-  query MyPortifolio {
+  query MyPortifolio($where: PortifolioCardsWhereInput = {}) {
     portifolio(where: { id: "clefpmxj4b0070blrhjlld0vx" }) {
       title
       subtitle
@@ -11,7 +11,7 @@ export const GET_PORTIFOLIO = gql`
           transformation: { image: { resize: { width: 1920, height: 1080 } } }
         )
       }
-      portifolio {
+      portifolio(where: $where) {
         id
         title
         date
