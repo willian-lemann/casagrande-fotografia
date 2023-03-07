@@ -1,6 +1,6 @@
 import { apolloClient } from "../../config/apollo";
 import { GET_PORTIFOLIOS } from "../../lib/graphql/queries/portifolio";
-import { Portifolio } from "../../utils/types";
+
 import { PortifolioList } from "./PortifolioList";
 
 export async function Portifolios() {

@@ -4,7 +4,10 @@ import { GET_ABOUT } from "../../lib/graphql/queries/about";
 import { AboutContent } from "../../utils/types";
 
 export default async function SobreNos() {
-  const { data } = await apolloClient.query<AboutContent>({ query: GET_ABOUT });
+  const { data } = await apolloClient.query<AboutContent>({
+    query: GET_ABOUT,
+    fetchPolicy: "no-cache",
+  });
 
   return (
     <>
