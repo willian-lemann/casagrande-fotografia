@@ -53,6 +53,7 @@ export default async function PortifolioDetails({
           alt="background image"
           className="object-cover"
           fill
+          priority
         />
       </div>
 
