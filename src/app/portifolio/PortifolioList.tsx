@@ -1,5 +1,6 @@
 "use client";
 import { useMemo } from "react";
+import { useRouter } from "next/navigation";
 
 import { Tab } from "@headlessui/react";
 import Image from "next/image";
@@ -13,6 +14,8 @@ type PortifolioListProps = {
 };
 
 export function PortifolioList({ portifolio }: PortifolioListProps) {
+  const router = useRouter();
+
   const preweddings = useMemo(
     () => portifolio.filter((item) => item.type === "prewedding"),
     []
@@ -22,6 +25,10 @@ export function PortifolioList({ portifolio }: PortifolioListProps) {
     () => portifolio.filter((item) => item.type === "wedding"),
     []
   );
+
+  function handleGoDetails(slug: string) {
+    router.push(`/portifolio/${slug}`);
+  }
 
   return (
     <Tab.Group>
@@ -61,6 +68,7 @@ export function PortifolioList({ portifolio }: PortifolioListProps) {
               <li
                 key={portifolioItem.id}
                 className="group cursor-pointer mb-8 last:mb-0 animate-fadeIn"
+                onClick={() => handleGoDetails(portifolioItem.slug)}
               >
                 <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent overflow-hidden transition-colors duration-300">
                   <Image
@@ -90,6 +98,7 @@ export function PortifolioList({ portifolio }: PortifolioListProps) {
               <li
                 key={portifolioItem.id}
                 className="group cursor-pointer mb-8 last:mb-0 animate-fadeIn"
+                onClick={() => handleGoDetails(portifolioItem.slug)}
               >
                 <div className="relative h-[250px] w-full rounded-md bg-black/20 group-hover:bg-transparent overflow-hidden transition-colors duration-300">
                   <Image

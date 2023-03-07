@@ -22,14 +22,16 @@ export function Header({ navigation, logo }: HeaderProps) {
     <div className="container px-6 py-6 lg:px-8">
       <nav className="flex items-center justify-between" aria-label="Global">
         <div className="flex lg:flex-1">
-          <div className="relative w-52 h-20">
+          {/* <div className="relative w-52 h-20">
             <Image
               src={logo}
               alt="logo casagrande fotografia"
               fill
               className="object-cover"
             />
-          </div>
+          </div> */}
+          <span className="text-primary">Casagrande</span>
+          <span className="pl-1">Fotografia</span>
         </div>
 
         {/* Mobile  */}
@@ -59,9 +61,9 @@ export function Header({ navigation, logo }: HeaderProps) {
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <button className="bg-primary rounded-full px-4 py-2 text-white text-base transition-all duration-300 hover:brightness-95">
+          {/* <button className="bg-primary rounded-full px-4 py-2 text-white text-base transition-all duration-300 hover:brightness-95">
             Conhecer mais
-          </button>
+          </button> */}
         </div>
       </nav>
 

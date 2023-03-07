@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="isolate bg-white">
-      <main className="relative md:bg-black/20 w-full h-[calc(100vh-128px)]">
+      <main className="relative md:bg-black/20 w-full h-[calc(100vh-72px)]">
         <Image
           src="/images/bruna-e-sostenes.jpg"
           alt="foto bruna e sostenes"
@@ -13,15 +13,6 @@ export default function Home() {
 
         <div className="px-6 lg:px-8">
           <div className="mx-auto max-w-2xl py-32 sm:py-48">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-white hover:brightness-90 transition-colors duration-300">
-                <a href="#" className="font-semibold text-white">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Ler mais sobre os depoimentos{" "}
-                  <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
             <div className="text-center hidden md:inline-block">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Conte sua história em cada Fotografia.
@@ -33,13 +24,7 @@ export default function Home() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <a
                   href="#"
-                  className="rounded-md bg-green-800 px-3.5 py-1.5 text-base font-normal leading-7 text-white shadow-sm"
-                >
-                  Vamos Conversar?
-                </a>
-                <a
-                  href="#"
-                  className="text-base font-semibold leading-7 text-white"
+                  className="text-base font-semibold leading-7 text-white bg-primary rounded-full px-4 py-2"
                 >
                   Portifólio <span aria-hidden="true">→</span>
                 </a>

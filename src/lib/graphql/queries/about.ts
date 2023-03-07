@@ -3,7 +3,7 @@ import { useQuery } from "../../../config/apollo";
 
 export const GET_ABOUT = gql`
   query About {
-    about(where: { id: "clea1h7rr4wz40blxre6kh2c7" }) {
+    aboutPage(where: { id: "clea1h7rr4wz40blxre6kh2c7" }) {
       header
       subheader
       briefDescription

@@ -1,31 +1,39 @@
 import { gql } from "@apollo/client";
-import { useQuery } from "../../../config/apollo";
 
-export const GET_PORTIFOLIO = gql`
-  query MyPortifolio($where: PortifolioCardsWhereInput = {}) {
-    portifolio(where: { id: "clefpmxj4b0070blrhjlld0vx" }) {
+export const GET_PORTIFOLIOS = gql`
+  query MyQuery($where: PortifolioWhereInput = {}) {
+    portifolios(where: $where) {
+      id
       title
-      subtitle
-      backgroundImage {
-        url(
-          transformation: { image: { resize: { width: 1920, height: 1080 } } }
-        )
+      date
+      slug
+      date
+      type
+      thumbnail {
+        url(transformation: { image: { resize: { width: 1280, height: 720 } } })
       }
-      portifolio(where: $where) {
-        id
-        title
-        date
-        type
-        thumbnail {
-          url(
-            transformation: { image: { resize: { width: 1280, height: 720 } } }
-          )
-        }
+      photos {
+        url
       }
     }
   }
 `;
 
-export function usePortifolio<T>() {
-  return useQuery<T>(GET_PORTIFOLIO);
-}
+export const GET_PORTIFOLIO = gql`
+  query MyQuery($where: PortifolioWhereUniqueInput = {}) {
+    portifolio(where: $where) {
+      id
+      title
+      date
+      slug
+      date
+      type
+      thumbnail {
+        url(transformation: { image: { resize: { width: 1280, height: 720 } } })
+      }
+      photos {
+        url
+      }
+    }
+  }
+`;

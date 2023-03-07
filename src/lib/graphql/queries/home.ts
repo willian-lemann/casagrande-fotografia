@@ -3,7 +3,7 @@ import { useQuery } from "../../../config/apollo";
 
 export const GET_HOME = gql`
   query Header {
-    home(where: { id: "cle9yyxuy4uux0blxo3upjmy6" }) {
+    homePage(where: { id: "cle9yyxuy4uux0blxo3upjmy6" }) {
       header {
         websiteTitle
         navigation {

@@ -13,7 +13,7 @@ export type Navigation = {
 };
 
 export type PageContent = {
-  home: {
+  homePage: {
     backgroundImage: {
       url: string;
     };
@@ -29,7 +29,7 @@ export type PageContent = {
 };
 
 export type AboutContent = {
-  about: {
+  aboutPage: {
     header: string;
     subheader: string;
     profileAvatar: { url: string };
@@ -49,15 +49,17 @@ export type Portifolio = {
   title: string;
   date: Date;
   type: Type;
+  slug: string;
+  photos: Array<{ url: string }>;
 };
 
 export type PortifolioContent = {
-  portifolio: {
+  portifolioPage: {
     backgroundImage: { url: string };
     title: string;
     subtitle: string;
-    portifolio: Portifolio[];
   };
+  portifolios: Portifolio[];
 };
 
 export type OrcamentoContent = {

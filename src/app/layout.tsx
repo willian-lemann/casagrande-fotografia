@@ -19,7 +19,8 @@ export default async function RootLayout({
 
   const data = response?.data;
 
-  const activeLogo = data.home.header.logos.find((logo) => logo.isActive);
+  console.log(data);
+  const activeLogo = data.homePage.header.logos.find((logo) => logo.isActive);
 
   return (
     <html lang="pt-BR" className={inter.className}>
@@ -28,7 +29,7 @@ export default async function RootLayout({
         <div className="">
           <Header
             logo={activeLogo?.image.url as string}
-            navigation={data.home.header.navigation}
+            navigation={data.homePage.header.navigation}
           />
 
           {children}
