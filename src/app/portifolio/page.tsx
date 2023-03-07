@@ -13,6 +13,7 @@ export default async function PortifolioPage() {
     data: { portifolioPage },
   } = await apolloClient.query<PortifolioContent>({
     query: GET_PORTIFOLIO_PAGE,
+    fetchPolicy: "no-cache",
   });
 
   return (
