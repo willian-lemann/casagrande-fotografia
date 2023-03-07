@@ -8,6 +8,7 @@ export async function Portifolios() {
     data: { portifolios },
   } = await apolloClient.query({
     query: GET_PORTIFOLIOS,
+    fetchPolicy: "no-cache",
   });
 
   return (
