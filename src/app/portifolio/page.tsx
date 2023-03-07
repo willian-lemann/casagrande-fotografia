@@ -6,7 +6,7 @@ import { PortifolioContent } from "../../utils/types";
 
 import { Portifolios } from "./Portifolios";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 export default async function PortifolioPage() {
   const {

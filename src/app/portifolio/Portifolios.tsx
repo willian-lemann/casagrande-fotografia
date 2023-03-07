@@ -10,8 +10,6 @@ export async function Portifolios() {
     query: GET_PORTIFOLIOS,
   });
 
-  console.log(portifolios);
-
   return (
     <div className="container">
       <section className="px-8 md:px-0">

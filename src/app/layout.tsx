@@ -19,7 +19,6 @@ export default async function RootLayout({
 
   const data = response?.data;
 
-  console.log(data);
   const activeLogo = data.homePage.header.logos.find((logo) => logo.isActive);
 
   return (
