@@ -16,7 +16,7 @@ type PortifolioDetailsProps = {
 export async function generateStaticParams() {
   const { data } = await apolloClient.query<{
     portifolios: Array<{ slug: string }>;
-  }>({ query: GET_PORTIFOLIOS });
+  }>({ query: GET_PORTIFOLIOS, fetchPolicy: "no-cache" });
 
   return data.portifolios.map((item) => ({
     slug: item.slug,
