@@ -13,6 +13,16 @@ type PortifolioDetailsProps = {
   params: { slug: string };
 };
 
+export async function generateStaticParams() {
+  const { data } = await apolloClient.query<{
+    portifolios: Array<{ slug: string }>;
+  }>({ query: GET_PORTIFOLIOS });
+
+  return data.portifolios.map((item) => ({
+    slug: item.slug,
+  }));
+}
+
 export default async function PortifolioDetails({
   params,
 }: PortifolioDetailsProps) {
