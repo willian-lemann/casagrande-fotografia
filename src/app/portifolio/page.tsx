@@ -6,12 +6,13 @@ import { PortifolioContent } from "../../utils/types";
 
 import { Portifolios } from "./Portifolios";
 
+export const revalidate = 60;
+
 export default async function PortifolioPage() {
   const {
     data: { portifolioPage },
   } = await apolloClient.query<PortifolioContent>({
     query: GET_PORTIFOLIO_PAGE,
-    fetchPolicy: "no-cache",
   });
 
   return (
