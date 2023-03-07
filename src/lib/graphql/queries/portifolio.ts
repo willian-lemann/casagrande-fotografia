@@ -29,7 +29,7 @@ export const GET_PORTIFOLIO = gql`
       date
       type
       thumbnail {
-        url(transformation: { image: { resize: { width: 1280, height: 720 } } })
+        url(transformation: { image: { resize: { width: 1920, height: 1080 } } })
       }
       photos {
         url

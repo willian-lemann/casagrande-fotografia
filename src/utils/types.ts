@@ -43,6 +43,9 @@ export type HeaderContent = {};
 
 export type Portifolio = {
   id: string;
+  background: {
+    url: string;
+  };
   thumbnail: {
     url: string;
   };
