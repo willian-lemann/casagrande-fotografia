@@ -30,6 +30,7 @@ export default async function PortifolioDetails({
 
   const { data } = await apolloClient.query<{ portifolio: Portifolio }>({
     query: GET_PORTIFOLIO,
+    fetchPolicy: "no-cache",
     variables: {
       where: {
         slug,
