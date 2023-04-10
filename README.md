@@ -1,6 +1,6 @@
 # Photographer website
 
-This is a website for a photographer made with nextjs and can be accessed at [casagrande-fotografia.vercel.app link](casagrande-fotografia.vercel.app) 
+This is a website for a photographer made with nextjs and can be accessed at [casagrande-fotografia.vercel.app](casagrande-fotografia.vercel.app) 
 
 ## Table of Contents
 
